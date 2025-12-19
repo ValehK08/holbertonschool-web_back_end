@@ -16,4 +16,6 @@ def log_stats():
     count = col.count_documents({'method': "GET", "path": "/status"})
     print(f"{count} status check")
 
-log_stats()
+if __name__ == "__main__":
+    """CALL IT"""
+    log_stats()
