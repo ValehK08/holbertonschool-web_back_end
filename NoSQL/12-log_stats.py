@@ -3,6 +3,7 @@
 from pymongo import MongoClient
 
 def log_stats():
+    """LOG THE STATS"""
     client = MongoClient()
     db = client.logs
     col = db['nginx']
@@ -14,6 +15,3 @@ def log_stats():
         print(f"    method {meth}: {col.count_documents({'method': meth})}")
     count = col.count_documents({'method': "GET", "path": "/status"})
     print(f"{count} status check")
-
-if __name__ = "__main__":
-    log_stats()
