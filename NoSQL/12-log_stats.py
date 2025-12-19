@@ -15,3 +15,5 @@ def log_stats():
         print(f"    method {meth}: {col.count_documents({'method': meth})}")
     count = col.count_documents({'method': "GET", "path": "/status"})
     print(f"{count} status check")
+
+log_stats()
